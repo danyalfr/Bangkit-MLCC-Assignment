@@ -53,7 +53,6 @@ model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy']
 
 early_stop = EarlyStopping(monitor='loss', mode='min', verbose=1, patience=10)
 model.fit(x=X_train, y=y_train, epochs=500, validation_test=(X_val, y_val), verbose=1, callbacks=[early_stop])
-
 loss = pd.DataFrame(model.history.history)
 loss.plot()
 # ----------------------------------------------------------------------------------------------------
